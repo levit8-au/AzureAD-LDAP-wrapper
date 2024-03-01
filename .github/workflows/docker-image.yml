@@ -19,6 +19,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag levit8au/azuread-ldap-wrapper:$(date +%s)
     - name: Docker Push
-      run: docker push levit8au/azure-ad-ldap-wrapper:$(date +%s)
+      run: docker push levit8au/azure-ad-ldap-wrapper
     - name: docker logout
       run: docker logout
