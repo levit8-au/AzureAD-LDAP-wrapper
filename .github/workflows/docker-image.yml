@@ -17,8 +17,8 @@ jobs:
     - name: docker login
       run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USER }} --password-stdin
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag levit8au/azuread-ldap-wrapper:$(date +%s)
+      run: docker build . --file Dockerfile --tag levit8au/azuread-ldap-wrapper:${{ github.sha }}
     - name: Docker Push
-      run: docker push levit8au/azure-ad-ldap-wrapper
+      run: docker push levit8au/azuread-ldap-wrapper
     - name: docker logout
       run: docker logout
