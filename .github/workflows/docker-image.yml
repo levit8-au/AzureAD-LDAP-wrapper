@@ -19,6 +19,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag levit8au/azuread-ldap-wrapper:${{ github.sha }}
     - name: Docker Push
-      run: docker push levit8au/azuread-ldap-wrapper
+      run: docker push levit8au/azuread-ldap-wrapper:${{ github.sha }}
     - name: docker logout
       run: docker logout
